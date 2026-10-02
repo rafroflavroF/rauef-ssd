@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- إعدادات SEO الشاملة لـ Google (الاسم، الألقاب، المهارات) -->
+    <title>Raouf Rebiha (x100 / lone wolf) | Official Portfolio</title>
+    <meta name="description" content="الموقع الرسمي للمطور والمبرمج رؤوف ربيحة (Raouf Rebiha) المعروف بلقب x100 و lone wolf. متخصص في تطوير المواقع والألعاب وحلول الأمن السيبراني.">
+    <meta name="keywords" content="رؤوف ربيحة, رؤوف, ربيحة, Raouf Rebiha, x100, lone wolf, رؤوف x100, مبرمج, مطور ألعاب, هكر, هكر الجزائر">
+    
+    <style>
+        :root {
+            --bg-color: #050505;
+            --card-bg: #0c0c0c;
+            --neon-green: #39ff14;
+            --text-color: #ffffff;
+            --text-muted: #888888;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* قسم روابط المواقع في الزاوية العلوية اليسرى */
+        .my-sites-corner {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            background-color: var(--card-bg);
+            border: 1px solid #222;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            max-width: 220px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+        }
+        .my-sites-corner:hover {
+            border-color: var(--neon-green);
+        }
+        .my-sites-corner h3 {
+            margin: 0 0 8px 0;
+            color: var(--neon-green);
+            font-size: 0.95rem;
+            border-bottom: 1px solid #222;
+            padding-bottom: 5px;
+        }
+        .my-sites-corner ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            direction: ltr;
+            text-align: left;
+        }
+        .my-sites-corner li {
+            margin-bottom: 6px;
+        }
+        .my-sites-corner a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .my-sites-corner a:hover {
+            color: var(--neon-green);
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 60px; /* لإعطاء مساحة لبوكس الزاوية على الشاشات الصغيرة */
+            border-bottom: 2px dashed #1a1a1a;
+            padding-bottom: 30px;
+        }
+
+        .nickname {
+            color: var(--neon-green);
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px var(--neon-green);
+            margin-bottom: 5px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            margin: 5px 0;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        /* Content Card */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #151515;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .card:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .bio-text {
+            font-size: 1.15rem;
+            text-align: justify;
+        }
+
+        /* زر وصندوق التعريف الشامل التفاعلي */
+        .btn-toggle {
+            background-color: transparent;
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .btn-toggle:hover {
+            background-color: var(--neon-green);
+            color: #000;
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+
+        .full-bio-box {
+            display: none; /* مخفي تلقائياً ويفتح عند الضغط */
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #dddddd;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* Tag / Badges */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+            direction: ltr;
+            justify-content: flex-end;
+        }
+
+        .tag {
+            background-color: #111;
+            color: var(--neon-green);
+            border: 1px solid #222;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid #111;
+            width: 100%;
+        }
+
+        /* تكييف الشاشات الصغيرة */
+        @media (max-width: 600px) {
+            .my-sites-corner {
+                position: static;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            header { margin-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- قسم الروابط المحدثة بدقة من صور مشاريعك -->
+        <div class="my-sites-corner">
+            <h3>🔗 My Netlify Projects</h3>
+            <ul>
+                <li><a href="https://netlify.app" target="_blank">🔹 apele2026phone</a></li>
+                <li><a href="https://netlify.app" target="_blank">🔹 temu-100-gift2026</a></li>
+                <li><a href="https://netlify.app" target="_blank">🔹 rauef2012</a></li>
+                <li><a href="https://netlify.app" target="_blank">🔹 maroi2026rbh</a></li>
+                <li><a href="https://netlify.app" target="_blank">🔹 mcrosoft2026</a></li>
+                <li><a href="https://netlify.app" target="_blank">🔹 focus100r</a></li>
+                <li><a href="https://netlify.app" target="_blank">🔹 savoir1</a></li>
+            </ul>
+        </div>
+        
+        <!-- Header -->
+        <header>
+            <div class="nickname">[ x100 // lone wolf ]</div>
+            <h1>Raouf Rebiha</h1>
+            <div class="subtitle">Full-Stack Developer & Cyber Security Expert</div>
+        </header>
+
+        <!-- Main Info -->
+        <main class="card">
+            <!-- النص الملخص السريع -->
+            <div class="bio-text">
+                أنا <strong>Raouf Rebiha</strong>، والمعروف رقمياً بـ <strong>x100</strong> و <strong>lone wolf</strong>. مبرمج ومطور رقمي جزائري من مواليد 2012. أتميز بشغف عالي وسرعة طفرية في حل المشكلات البرمجية المعقدة (Problem Solving)، مع تخصص متقدم في تطوير مواقع الويب، هندسة الألعاب، واختبار اختراق الشبكات والأنظمة (Cyber Security).
+            </div>
+
+            <!-- زر التبديل لعرض النص الكامل الشامل -->
+            <button class="btn-toggle" onclick="toggleBio()">اضغط للتعريف الشامل ➕</button>
+
+            <!-- صندوق النص الكامل (يظهر عند الضغط) -->
+            <div class="full-bio-box" id="fullBio">
+                المطور <strong>رؤوف ربيحة</strong> يُعد من أبرز المطورين والمبرمجين الصاعدين للمواقع وتطوير الألعاب. من مواليد 2012، لكن بعقل كبير ينير وسينير العالم الحديث، وهو من أهم الشخصيات الواعدة في العالم الرقمي ومن أفضل خبراء الحماية، ومتخصص في عمليات اختبار الاختراق كالشبكات والمواقع. يمتلك سرعة طفرية في حل المشاكل البرمجية المستعصية التي يصعب على الآخرين حلها، مما مكنه من نيل احترام مجتمعات المبرمجين.
+                <br><br>
+                إلى جانب نبوغه البرمجي، أتقن رياضة القوة والتحكم "الكيك بوكسينغ" (Kickboxing)، ويمتلك شخصية مرنة وذكية تمكنه من الاندмаج في أي محيط عقلاني واجتماعي مختلف، ومحترف في الهندسة الاجتماعية لجمع وفحص المعلومات وتحليل البيئات بكفاءة تامة. نشر وساهم في عدة مشاريع ومواقع، كما ألف كتباً علمية وتقنية متوفرة في مكتبات نور بمشاركة الكاتب نبيل دعاشي.
+            </div>
+
+            <!-- الكلمات الدلالية التقنية -->
+            <div class="tags-container">
+                <span class="tag">#Lone_Wolf</span>
+                <span class="tag">#Game_Dev</span>
+                <span class="tag">#Cyber_Security</span>
+                <span class="tag">#Web_Exploit</span>
+                <span class="tag">#Social_Engineering</span>
+                <span class="tag">#Kickboxing</span>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Raouf Rebiha (lone wolf). All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <!-- كود الجافاسكريبت البسيط لفتح وإغلاق صندوق التعريف -->
+    <script>
+        function toggleBio() {
+            var box = document.getElementById("fullBio");
+            if (box.style.display === "block") {
+                box.style.display = "none";
+            } else {
+                box.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
